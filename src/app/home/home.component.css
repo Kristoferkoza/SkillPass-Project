@@ -1,0 +1,100 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Zapobiega przewijaniu strony */
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Szerokość prostokąta, dostosuj według potrzeb */
+  padding: 20px;
+  text-align: center;
+  z-index: 2; /* Ustawia prostokąt nad kontenerem */
+}
+
+.header-content {
+  background-color: #007bff; /* Kolor tła prostokąta */
+  border: 2px solid transparent;
+  border-image-slice: 1;
+  color: white;
+  font-size: 1.5em; /* Rozmiar czcionki */
+  padding: 15px;
+  border-radius: 5px; /* Zaokrąglenie rogów prostokąta */
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: calc(
+    100vh - 80px
+  ); /* Odejmujemy wysokość nagłówka, aby kontener wypełniał resztę widoku */
+  display: flex;
+}
+
+.left-side,
+.right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.5s;
+}
+
+.left-side:hover,
+.right-side:hover {
+  transform: scale(1.05);
+}
+
+.left-side .content,
+.right-side .content {
+  text-align: center;
+  padding: 20px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.zigzag-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 10px;
+  background: linear-gradient(
+    to bottom,
+    transparent 25%,
+    black 25%,
+    black 50%,
+    transparent 50%,
+    transparent 75%,
+    black 75%
+  );
+  background-size: 10px 40px;
+  z-index: 1;
+}
+
+.left-side {
+  background-color: #f8f9fa;
+}
+
+.right-side {
+  background-color: #e9ecef;
+}
