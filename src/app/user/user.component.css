@@ -56,10 +56,6 @@ html {
     .container {
       display: block;
     } /*Fix Menu*/
-  
-    .content-box.box-2 {
-      text-align: center;
-    }
     .content-box.box-1 .tablet-device {
       padding: 30px;
     }
@@ -243,7 +239,9 @@ html {
   /* ---------------------------------------------------------------------------- */
   /* ------------------------------------Html-Body------------------------------- */
   /* ---------------------------------------------------------------------------- */
-  html,
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     width: 100%;
     padding: 0;
@@ -435,7 +433,7 @@ html {
   }
   
   .content-box.box-2 {
-    color: #fff;
+    text-align: center;
   }
   .content-box.box-2 .header {
     border-bottom: 1px solid #fff;
@@ -446,155 +444,26 @@ html {
   .content-box.box-2 .header h3 {
     color: #fff;
   }
-  .content-box.box-2 .post {
-    display: inline-block;
-  }
   .content-box.box-2 .post img {
-    display: inline-block;
-  }
-  .content-box.box-2 .post h4 {
-    margin: 5px;
-    color: #fff;
-    font-size: 20px;
-    text-align: center;
-  }
-  .content-box.box-2 .social {
-    margin-top: 20px;
-  }
-  
-  .content-box.box-3 {
-    text-align: center;
-    background-color: #f7f7e0;
-  }
-  .content-box.box-3 .header h3 {
-    color: #000;
-  }
-  .content-box.box-3 .post img {
     margin-bottom: 10px;
   }
-  .content-box.box-3 .post h5 {
+  .content-box.box-2 .post h5 {
+    color: #fff;
     font-size: 30px;
     margin: 20px 0;
     font-weight: 500;
   }
-  .content-box.box-4 {
+  .content-box.box-2 p {
     color: #fff;
   }
-  .content-box.box-4 .header {
-    border-bottom: 1px solid #fff;
+  .content-box.box-2 .images {
+    height: 250px;
+    width: 250px;
   }
-  .content-box.box-4 .header h2 {
-    color: #fff;
-  }
-  .content-box.box-4 .header h3 {
-    color: #fff;
-  }
-  .content-box.box-4 .pricing {
-    background-color: #fff;
-    text-align: center;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border: 1px solid #453b5d;
-    padding: 10px;
-  }
-  .content-box.box-4 .pricing-title {
-    line-height: 1;
-    font-size: 28px;
-    font-weight: bold;
+  .content-box.box-3 {
     color: #000;
-    border-bottom: 1px dashed #d2d2d2;
-    padding: 10px;
-  }
-  .content-box.box-4 .pricing-price {
-    width: 100px;
-    height: 100px;
-    color: #fff;
-    font-size: 19px;
-    border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -khtml-border-radius: 50px;
-    background: #37b5e5;
-    margin: 20px 0;
-    line-height: 100px;
-    text-align: center;
-    display: inline-block;
-  }
-  .content-box.box-4 .pricing-features {
-    color: #595f6b;
-  }
-  .content-box.box-4 .pricing-button {
-    background: #302f2f;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    padding: 5px 15px;
-    line-height: 30px;
-    font-weight: bold;
-    font-size: 20px;
-    margin: 15px 0 25px 0;
-    display: inline-block;
-  }
-  
-  .content-box.box-5 {
-    text-align: center;
     background-color: #f7f7e0;
-  }
-  .content-box.box-5 .header h3 {
-    color: #000;
-  }
-  .content-box.box-5 {
-    border-bottom: 1px solid #d5d5d5; /*max-width: 100%;*/
-  }
-  .content-box.box-5 .post {
-    background: #ffffff;
-  }
-  .content-box.box-5 .post:after,
-  .post:before {
-    clear: both;
-    content: "\0020";
-    display: block;
-    visibility: hidden;
-    width: 0;
-    height: 0;
-  }
-  .content-box.box-5 .post h2 {
-    font-size: 30px;
-    line-height: 45px;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-bottom: 1px solid #000;
-    margin-bottom: 20px;
-  }
-  .content-box.box-5 .post .art-content {
-    padding: 20px 60px;
     text-align: center;
-    margin-top: 50px;
-  }
-  .content-box.box-5 .post img {
-    max-height: 440px;
-    width: 100%;
-  }
-  
-  .content-box.box-6 {
-    color: #fff;
-    text-align: center;
-  }
-  .content-box.box-6 .header {
-    border-bottom: 1px solid #fff;
-  }
-  .content-box.box-6 .title {
-    color: #fff;
-    text-align: right;
-  }
-  .content-box.box-6 .subcribe-form {
-    text-align: left;
-  }
-  .content-box.box-6 .header h2 {
-    color: #fff;
   }
   
   /* ---------------------------------------------------------------------------- */
@@ -677,13 +546,8 @@ html {
     color: #ffffff;
   }
   a.button.button02 {
-    background: #ffe9b4;
-    color: #000000;
-  }
-  a.button.button03 {
     background: #37b5e5;
   }
-  
   /* ---------------------------------------------------------------------------- */
   /* ------------------------------------Subcribe-------------------------------- */
   /* ---------------------------------------------------------------------------- */
@@ -797,13 +661,6 @@ html {
     text-decoration: none;
   }
   
-  /*
-  Zerotheme.com | Free Html5 Responsive Templates
-  Zerogrid - A Single Grid System for Responsive Design
-  Author: Kimmy
-  Version : 3.0
-  Author URI: https://www.zerotheme.com/
-  */
   /* -------------------------------------------- */
   /* ------------------Grid System--------------- */
   .zerogrid {
