@@ -1,0 +1,51 @@
+<div class="login">
+    <div class="container" [ngClass]="{'active': isSignUp}">
+      <div class="form-container sign-up" *ngIf="isSignUp">
+        <form>
+          <h1>Stwórz Konto Firmowe</h1>
+          <div class="social-icons">
+            <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <span>lub użyj swojego e-maila do rejestracji</span>
+          <input type="text" placeholder="Nazwa Firmy" />
+          <input type="email" placeholder="Email Firmowy" />
+          <input type="password" placeholder="Hasło" />
+          <button>Załóż Konto</button>
+        </form>
+      </div>
+      <div class="form-container sign-in" *ngIf="!isSignUp">
+        <form>
+          <h1>Zaloguj się</h1>
+          <div class="social-icons">
+            <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <span>lub użyj swojego e-maila firmowego</span>
+          <input type="email" placeholder="Email Firmowy" />
+          <input type="password" placeholder="Hasło" />
+          <a href="#">Zapomniałeś Hasła?</a>
+          <button>Zaloguj się</button>
+        </form>
+      </div>
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <h1>Witaj Ponownie!</h1>
+            <p>Wprowadź swoje dane firmowe, aby korzystać ze wszystkich funkcji</p>
+            <button (click)="toggleMode()">Zaloguj się</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+            <h1>Witaj w SkillPass!</h1>
+            <p>Podaj swoje dane firmowe, aby zarejestrować konto</p>
+            <button (click)="toggleMode()">Załóż Konto</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
