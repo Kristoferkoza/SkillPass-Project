@@ -1,24 +1,45 @@
 <body>
-    <div class="header">
-        <div class="header-content">
-            <p>Kim jesteś?</p>
+  <div class="container">
+    <div class="content">
+      <a routerLink="/user" class="role-selection left role-card">
+        <div class="image-container">
+          <img src="../../assets/employee.png" alt="Pracownik" class="side-image" />
+          <button class="role-button">Jestem Pracownikiem</button>
         </div>
+      </a>
+      <div class="header-container center">
+        <header>
+          <h1>Witamy w SkillPass!</h1>
+          <p class="slogan">Wybierz, kim jesteś, aby kontynuować</p>
+        </header>
+      </div>
+      <a routerLink="/company" class="role-selection right role-card">
+        <div class="image-container">
+          <img src="../../assets/employer.png" alt="Pracodawca" class="side-image" />
+          <button class="role-button">Jestem Pracodawcą</button>
+        </div>
+      </a>
     </div>
-    <div class="container">
-        <div class="left-side">
-            <div class="content">
-                <h1>Osoba prywatna</h1>
-                <p>Pomożemy Ci zbudować swoje wiarygodne CV i znaleźć wymarzoną pracę!</p>
-                <button [routerLink]="['/user-login']">Do Dzieła!</button>
-            </div>
-        </div>
-        <div class="right-side">
-            <div class="content">
-                <h1>Firma</h1>
-                <p>Pomożemy Ci znaleźć wymarzonych pracowników!</p>
-                <button [routerLink]="['/company']">Do Dzieła!</button>
-            </div>
-        </div>
-        <div class="zigzag-line"></div>
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="../../assets/skillpass_logo_2.png" alt="Logo aplikacji" />
+      </div>
+      <div class="footer-rights">
+        <p>&copy; 2024 All Rights Reserved.</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://facebook.com" target="_blank" class="social-link">
+          <img src="../../assets/facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-link">
+          <img src="../../assets/instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-link">
+          <img src="../../assets/linkedin.png" alt="LinkedIn" />
+        </a>
+      </div>
     </div>
+  </footer>
 </body>

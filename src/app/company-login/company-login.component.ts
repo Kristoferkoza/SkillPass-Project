@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './company-login.component.html',
-  styleUrl: './company-login.component.css'
+  styleUrl: './company-login.component.scss'
 })
 export class CompanyLoginComponent {
   isSignUp = false;

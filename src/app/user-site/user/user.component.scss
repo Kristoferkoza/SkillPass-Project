@@ -1,0 +1,168 @@
+// Definicje kolorów
+$primary-color: #9153C4; // Fioletowy dla nagłówków sekcji
+$secondary-color: #e91e63; // Różowy (pozostaje bez zmian)
+$background-color: #0D0D0D; // Ciemne tło strony
+$text-color: #F2F2F2; // Jasny szary tekst
+$navbar-background: #0D0D0D; // Tło nagłówka i stopki (ciemnofioletowe)
+$hover-color: darken($primary-color, 10%); // Ciemniejszy odcień fioletowego
+
+.header, .footer {
+  background-color: $navbar-background;
+  color: $text-color;
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo img {
+    height: 50px;
+    width: auto;
+  }
+
+  .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    li a {
+      color: $text-color;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .auth-buttons {
+    display: flex;
+    gap: 15px;
+
+    .login-button,
+    .signup-button {
+      padding: 8px 15px;
+      font-size: 1rem;
+      color: $text-color;
+      background-color: $primary-color;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
+
+    .signup-button {
+      background-color: $secondary-color;
+
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+  }
+}
+
+.content {
+  background-color: $background-color;
+  color: $text-color;
+  
+  section {
+    padding: 50px 20px;
+    display: flex;
+    align-items: center;
+    background-color: $background-color;
+  }
+
+  .section-content {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+
+    &.reverse-order {
+      flex-direction: row-reverse;
+    }
+
+    .section-image {
+      width: 50%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .section-text {
+      width: 50%;
+      text-align: center;
+
+      h3 {
+        font-size: 2rem;
+        color: $primary-color;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: #0D0D0D;
+  color: #F2F2F2;
+  padding: 10px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-logo img {
+  height: 50px;
+  width: auto;
+}
+
+.footer-rights {
+  flex: 1;
+  text-align: center;
+}
+
+.footer-rights p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.footer-social {
+  display: flex;
+  width: 250px;
+  gap: 22px;
+}
+
+.social-link img {
+  height: 30px;
+  width: auto;
+  transition: opacity 0.3s;
+}
+
+.social-link:hover img {
+  opacity: 0.7;
+}
