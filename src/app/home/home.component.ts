@@ -6,9 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  menuActive: boolean = false;
-
-  menuToggle(): void {
-    this.menuActive = !this.menuActive
-  }
+  
 }

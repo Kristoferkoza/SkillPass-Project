@@ -5,6 +5,7 @@ import { CompanyComponent } from './company-site/company/company.component';
 import { HomeComponent } from './home/home.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { CompanyLoginComponent } from './company-login/company-login.component';
+import { UserSignupComponent } from './user-signup/user-signup.component';
 
 const routes: Routes = [
   { 
@@ -13,7 +14,9 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   { path: 'user-login', component: UserLoginComponent },
+  { path: 'user-signup', component: UserSignupComponent },
   { path: 'company-login', component: CompanyLoginComponent },
+  // { path: 'company-login', component: CompanyLoginComponent },
   { path: 'user', component: UserComponent },
   { path: 'company', component: CompanyComponent },
   { path: '**', redirectTo: '' },

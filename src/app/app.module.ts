@@ -9,6 +9,10 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { CompanyComponent } from './company-site/company/company.component';
 import { CompanyLoginComponent } from './company-login/company-login.component';
 import { RouterLink } from '@angular/router';
+import { UserSignupComponent } from './user-signup/user-signup.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -16,15 +20,17 @@ import { RouterLink } from '@angular/router';
     HomeComponent,
     UserComponent,
     CompanyComponent,
+    UserLoginComponent,
+    UserSignupComponent,
+    CompanyLoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserLoginComponent,
-    CompanyLoginComponent,
-    RouterLink
+    RouterLink,
+    FormsModule, 
+    ReactiveFormsModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

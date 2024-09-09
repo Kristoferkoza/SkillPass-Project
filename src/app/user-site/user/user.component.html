@@ -5,10 +5,8 @@
       alt="SkillPass"
       class="logo"
     />
-    <button class="navbar-button">ZALOGUJ SIĘ</button>
+    <button routerLink="/user-login" class="navbar-button">ZALOGUJ SIĘ</button>
   </nav>
-
-  <hr style="border: 0; border-top: 1px solid #ccc" />
 
   <div class="content">
     <div class="hero">
@@ -18,7 +16,7 @@
           Zweryfikuj swoje umiejętności, znajdź idealną pracę i rozwijaj swoją
           karierę dzięki spersonalizowanym ścieżkom rozwoju.
         </div>
-        <button class="hero-button">ZAREJESTRUJ SIĘ</button>
+        <button routerLink="/user-signup" class="hero-button">ZAREJESTRUJ SIĘ</button>
       </div>
       <div class="hero-image">
         <img src="../../../assets/hero_image.png" alt="hero-image" />
@@ -337,12 +335,12 @@
       <p>Legal</p>
       <p>Help</p>
     </div>
-    <div class="footer-social-media">
-      <img class="footer-social-media_fb" src="../../../assets/svg-icons/facebook-app-round-icon.svg" alt="FB">
-      <img class="footer-social-media_x" src="../../../assets/svg-icons/x-social-media-logo-icon.svg" alt="X">
-      <img class="footer-social-media_in" src="../../../assets/svg-icons/linkedin-square-icon.svg" alt="IN">
-      <img class="footer-social-media_ig" src="../../../assets/svg-icons/black-instagram-icon.svg" alt="IG">
-    </div>
+    <div class="footer-social-icons">
+      <a href="https://www.facebook.com" class="footer-social-icon facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com" class="footer-social-icon linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com" class="footer-social-icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.twitter.com" class="footer-social-icon twitter" target="_blank"><i class="fab fa-x-twitter"></i></a>
+  </div>
     <div class="footer-law">
       <p class="footer-rights-reserved">© 2024 All rights reserved</p>
       <p class="footer-language">Polish Version</p>

@@ -50,9 +50,10 @@ $content-color: #161C2D;
   font-weight: medium;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
   
   &:hover {
-    background-color: darken($color: $accent-color, $amount: 8); /* Ciemniejszy różowy kolor przy najechaniu */
+    background-color: darken($color: $accent-color, $amount: 8);
   }
 }
 
@@ -120,6 +121,7 @@ $content-color: #161C2D;
   font-weight: medium;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
   
   &:hover {
     background-color: darken($color: $primary-color, $amount: 10);
@@ -351,6 +353,7 @@ $content-color: #161C2D;
   background: $background-color;
   border: none;
   border-radius: 50%;
+  transition: background-color 0.3s ease;
   
   &:hover {
     background-color: darken($color: $background-color, $amount: 4);
@@ -373,6 +376,7 @@ $content-color: #161C2D;
   background: $background-color;
   border: none;
   border-radius: 50%;
+  transition: background-color 0.3s ease;
 
   &:hover {
     background-color: darken($color: $background-color, $amount: 4);
@@ -477,6 +481,7 @@ $content-color: #161C2D;
   font-weight: medium;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
   
   &:hover {
     background-color: darken($color: $primary-color, $amount: 10);
@@ -660,21 +665,38 @@ $content-color: #161C2D;
   align-items: center;
   font-size: 14px;
   font-weight: 600;
-  justify-content: space-between;
+  justify-content: space-evenly;
   color: $title-color;
 }
 
-.footer-social-media {
-  grid-area: social;
+.footer-social-icons {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
+}
 
-  img {
-    height: 24px;
-    width: auto;
-  }
+.footer-social-icon {
+  font-size: 28px;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-social-icon.facebook:hover {
+  color: #1877f2;
+}
+
+.footer-social-icon.linkedin:hover {
+  color: #0077b5;
+}
+
+.footer-social-icon.instagram:hover {
+  color: #e1306c;
+}
+
+.footer-social-icon.twitter:hover {
+  color: #1da1f2;
 }
 
 .footer-law {
