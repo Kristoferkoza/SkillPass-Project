@@ -671,32 +671,37 @@ $content-color: #161C2D;
 
 .footer-social-icons {
   display: flex;
+  gap: 20px;
   justify-content: flex-end;
   align-items: center;
-  gap: 20px;
 }
 
-.footer-social-icon {
-  font-size: 28px;
-  color: #000;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.footer-social-icons a {
+  width: 28px;
+  height: 28px;
 }
 
-.footer-social-icon.facebook:hover {
-  color: #1877f2;
+.footer-social-icons svg {
+  fill: #000000;
+  width: 100%;
+  height: 100%;
+  transition: fill 0.2s ease;
 }
 
-.footer-social-icon.linkedin:hover {
-  color: #0077b5;
+.footer-social-icons .linkedin:hover svg {
+  fill: #0A66C2;
 }
 
-.footer-social-icon.instagram:hover {
-  color: #e1306c;
+.footer-social-icons .facebook:hover svg {
+  fill: #1877F2;
 }
 
-.footer-social-icon.twitter:hover {
-  color: #1da1f2;
+.footer-social-icons .instagram:hover svg {
+  fill: #E1306C;
+}
+
+.footer-social-icons .x:hover svg {
+  fill: #292929;
 }
 
 .footer-law {

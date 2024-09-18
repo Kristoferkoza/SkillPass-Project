@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { DonutsModule } from './donuts/donuts.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { getMetadataArgsStorage } from 'typeorm';
+import { UserModule } from './users/user.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { getMetadataArgsStorage } from 'typeorm';
       synchronize: true,
     }),
     DonutsModule,
+    UserModule,
   ],
 })
 export class AppModule {}
