@@ -1,19 +1,21 @@
 import { Module } from '@nestjs/common';
-import { DonutsModule } from './donuts/donuts.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { getMetadataArgsStorage } from 'typeorm';
-import { UserModule } from './users/user.module';
+import { User } from './users/enitities/user.entity';
+import { UsersModule } from './users/users.module'; // Moduł użytkowników
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: 'database/db.sqlite',
-      entities: getMetadataArgsStorage().tables.map((tbl) => tbl.target),
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'postgres',
+      password: 'password',
+      database: 'skillpass',
+      entities: [User],
       synchronize: true,
     }),
-    DonutsModule,
-    UserModule,
+    UsersModule,
   ],
 })
 export class AppModule {}

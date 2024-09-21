@@ -11,6 +11,7 @@ import { CompanyLoginComponent } from './company-login/company-login.component';
 import { RouterLink } from '@angular/router';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -30,6 +31,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     RouterLink,
     FormsModule, 
     ReactiveFormsModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })

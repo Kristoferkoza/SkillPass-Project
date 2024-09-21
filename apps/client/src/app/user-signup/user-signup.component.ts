@@ -1,7 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, AbstractControlOptions, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
+import { CreateUser } from '../_models/users/create-user.model';
+import { UsersService } from '../_services/users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-login',
@@ -9,30 +12,79 @@ import { Location } from '@angular/common';
   styleUrl: './user-signup.component.scss'
 })
 export class UserSignupComponent {
-  registerForm: FormGroup;
-
   nameControl = new FormControl('', [Validators.required]);
   emailControl = new FormControl('', [Validators.required, Validators.email]);
   passwordControl = new FormControl('', [Validators.required, Validators.minLength(6)]);
   repeatPasswordControl = new FormControl('', [Validators.required]);
 
-  constructor(private location: Location) {
-    this.registerForm = new FormGroup({
-      name: this.nameControl,
-      email: this.emailControl,
-      password: this.passwordControl,
-      repeatPassword: this.repeatPasswordControl,
-    });
+  form!: FormGroup; // Zmieniamy deklarację formularza na późniejszą inicjalizację
+
+  MatchingPasswordValidator = (control: AbstractControl) => {
+    const password = this.passwordControl;
+    const repeatPassword = this.repeatPasswordControl;
+
+    if (
+      repeatPassword.errors &&
+      !repeatPassword.errors['matchingPasswordValidator']
+    ) {
+      return;
+    }
+
+    if (password.value !== repeatPassword.value) {
+      repeatPassword.setErrors({ matchingPasswordValidator: true });
+    } else {
+      repeatPassword.setErrors(null);
+    }
+  };
+
+  constructor(
+    private router: Router,
+    private location: Location,
+    private fb: FormBuilder,
+    private usersService: UsersService
+  ) {}
+
+  ngOnInit(): void {
+    // Przenosimy inicjalizację formularza do ngOnInit
+    this.form = this.fb.group(
+      {
+        name: this.nameControl,
+        email: this.emailControl,
+        password: this.passwordControl,
+        repeatPassword: this.repeatPasswordControl,
+      },
+      {
+        validators: [this.MatchingPasswordValidator],
+      } as AbstractControlOptions
+    );
   }
 
   goToPreviousSite() {
     this.location.back();
   }
 
-  onSubmit() {
-    console.log("Zapisz")
-    if (this.registerForm.valid) {
-      console.log(this.registerForm.value);
+  save() {
+    if (this.form.invalid) {
+      return;
     }
+
+    const { name, email, password } = this.form.value;
+
+    const newUser: CreateUser = {
+      name: name!,
+      email: email!,
+      password: password!
+    };
+
+    console.log(newUser)
+    this.usersService.create(newUser).subscribe({
+      next: () => {
+        console.log("Konto utworzone")
+        this.router.navigate(['/']);
+      },
+      error: (error) => {
+        console.log("Wystąpił błąd: ", error)
+      },
+    })
   }
 }

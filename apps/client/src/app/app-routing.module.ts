@@ -8,10 +8,10 @@ import { CompanyLoginComponent } from './company-login/company-login.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 
 const routes: Routes = [
-  { 
+  {
     path: '',
     component: HomeComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   { path: 'user-login', component: UserLoginComponent },
   { path: 'user-signup', component: UserSignupComponent },
@@ -24,7 +24,7 @@ const routes: Routes = [
 
 const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled',
-  scrollPositionRestoration: 'enabled'
+  scrollPositionRestoration: 'enabled',
 };
 
 @NgModule({

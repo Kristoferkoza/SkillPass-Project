@@ -21,37 +21,37 @@
       <h1 class="register-title">ZAREJESTRUJ SIĘ</h1>
       <p class="register-subtitle">KONTO PRACOWNIKA</p>
     
-      <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <form class="form" [formGroup]="form" (ngSubmit)="save()">
 
-        <div [ngClass]="{'incorrect': registerForm.get('name')?.invalid && registerForm.get('name')?.touched}">
+        <div [ngClass]="{'incorrect': form.get('name')?.invalid && form.get('name')?.touched}">
           <label for="name-input">
             <img src="../../assets/svg-icons/person-icon.svg" alt="USER">
           </label>
           <input type="text" formControlName="name" id="name-input" placeholder="Imię i nazwisko">
         </div>
       
-        <div [ngClass]="{'incorrect': registerForm.get('email')?.invalid && registerForm.get('email')?.touched}">
+        <div [ngClass]="{'incorrect': form.get('email')?.invalid && form.get('email')?.touched}">
           <label for="email-input">
             <img src="../../assets/svg-icons/email-icon.svg" alt="EMAIL">
           </label>
           <input type="email" formControlName="email" id="email-input" placeholder="Email">
         </div>
       
-        <div [ngClass]="{'incorrect': registerForm.get('password')?.invalid && registerForm.get('password')?.touched}">
+        <div [ngClass]="{'incorrect': form.get('password')?.invalid && form.get('password')?.touched}">
           <label for="password-input">
             <img src="../../assets/svg-icons/password-icon.svg" alt="PASSWORD">
           </label>
           <input type="password" formControlName="password" id="password-input" placeholder="Hasło">
         </div>
       
-        <div [ngClass]="{'incorrect': (registerForm.get('repeatPassword')?.invalid && registerForm.get('repeatPassword')?.touched)}">
+        <div [ngClass]="{'incorrect': (form.get('repeatPassword')?.invalid && form.get('repeatPassword')?.touched)}">
           <label for="repeat-password-input">
             <img src="../../assets/svg-icons/password-icon.svg" alt="PASSWORD">
           </label>
           <input type="password" formControlName="repeatPassword" id="repeat-password-input" placeholder="Powtórz hasło">
         </div>
       
-        <button class="signup" type="submit" [disabled]="registerForm.invalid">
+        <button class="signup" type="submit" [disabled]="form.invalid">
           Załóż konto
         </button>
       
