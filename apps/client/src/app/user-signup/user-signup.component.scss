@@ -1,9 +1,4 @@
-$primary-color: #d732a8;
-$secondary-color: #ec008c;
-$accent-color: #586cd4;
-$background-color: #fff0ff;
-$title-color: #000000;
-$content-color: #161c2d;
+@import '../../variables.scss';
 
 .page {
   min-height: 100vh;

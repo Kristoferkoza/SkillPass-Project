@@ -12,6 +12,8 @@ import { RouterLink } from '@angular/router';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { SidebarComponent } from './user-dashboard/sidebar/sidebar.component';
 
 
 
@@ -24,6 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     UserLoginComponent,
     UserSignupComponent,
     CompanyLoginComponent,
+    UserDashboardComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
