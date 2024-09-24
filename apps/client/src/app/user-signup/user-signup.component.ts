@@ -80,7 +80,7 @@ export class UserSignupComponent {
     this.usersService.create(newUser).subscribe({
       next: () => {
         console.log("Konto utworzone")
-        this.router.navigate(['/']);
+        this.router.navigate(['/user-dashboard/main-page']);
       },
       error: (error) => {
         console.log("Wystąpił błąd: ", error)
