@@ -1,1 +1,53 @@
-<div class="user-login">USER LOGIN</div>
+<div class="page">
+    <div class="side-panel">
+      <img class="logo" src="../../assets/skillpass_logo_2.png" alt="SkillPass" />
+      <img src="../../assets/handshake.png" alt="Handshake" class="handshake-image" />
+      <h2>Rekrutacja w nowym formacie!</h2>
+      <p>Dołącz do SkillPass i znajdź swoją wymarzoną pracę</p>
+    </div>
+    <div class="content">
+      <div class="header">
+        <div class="header-left" (click)="goToPreviousSite()">
+          <img src="../../assets/svg-icons/chevron-left-icon.svg" alt="LEFT">
+          <p>Powrót</p>
+        </div>
+        <div class="header-right">
+          <p class="header-right-question">Masz już konto?</p>
+          <a class="header-right-login" routerLink="/user-signup">ZAREJESTRUJ SIĘ</a>
+        </div>
+      </div>
+  
+      <div class="register-container">
+        <h1 class="register-title">ZALOGUJ SIĘ</h1>
+        <p class="register-subtitle">KONTO PRACOWNIKA</p>
+      
+        <form class="form" [formGroup]="form" (ngSubmit)="login()">
+
+          <div [ngClass]="{'incorrect': form.get('email')?.invalid && form.get('email')?.touched}">
+            <label for="email-input">
+              <img src="../../assets/svg-icons/email-icon.svg" alt="EMAIL">
+            </label>
+            <input type="email" formControlName="email" id="email-input" placeholder="Email">
+          </div>
+        
+          <div [ngClass]="{'incorrect': form.get('password')?.invalid && form.get('password')?.touched}">
+            <label for="password-input">
+              <img src="../../assets/svg-icons/password-icon.svg" alt="PASSWORD">
+            </label>
+            <input type="password" formControlName="password" id="password-input" placeholder="Hasło">
+          </div>
+        
+          <button class="signup" type="submit" [disabled]="form.invalid">
+            Zaloguj się
+          </button>
+        
+        </form>
+        
+      </div>
+         
+      <div class="rights-reserved">
+        © 2024 All rights reserved
+      </div>
+    </div>
+  </div>
+  

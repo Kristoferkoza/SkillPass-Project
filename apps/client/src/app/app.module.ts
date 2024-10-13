@@ -15,8 +15,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { SidebarComponent } from './user-dashboard/sidebar/sidebar.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

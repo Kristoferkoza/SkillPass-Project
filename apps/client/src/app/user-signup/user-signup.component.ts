@@ -17,7 +17,7 @@ export class UserSignupComponent {
   passwordControl = new FormControl('', [Validators.required, Validators.minLength(6)]);
   repeatPasswordControl = new FormControl('', [Validators.required]);
 
-  form!: FormGroup; // Zmieniamy deklarację formularza na późniejszą inicjalizację
+  form!: FormGroup;
 
   MatchingPasswordValidator = (control: AbstractControl) => {
     const password = this.passwordControl;
@@ -45,7 +45,6 @@ export class UserSignupComponent {
   ) {}
 
   ngOnInit(): void {
-    // Przenosimy inicjalizację formularza do ngOnInit
     this.form = this.fb.group(
       {
         name: this.nameControl,
@@ -80,7 +79,7 @@ export class UserSignupComponent {
     this.usersService.create(newUser).subscribe({
       next: () => {
         console.log("Konto utworzone")
-        this.router.navigate(['/user-dashboard/main-page']);
+        this.router.navigate(['user-dashboard/main-page']);
       },
       error: (error) => {
         console.log("Wystąpił błąd: ", error)
