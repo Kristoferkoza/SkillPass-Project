@@ -18,8 +18,9 @@ import { UsersService } from '../_services/users.service';
 export class UserLoginComponent {
   emailControl = new FormControl('', [Validators.required]);
   passwordControl = new FormControl('', [Validators.required]);
-
   form!: FormGroup;
+  
+  loginError: boolean = false;
 
   constructor(
     private router: Router,
@@ -42,22 +43,19 @@ export class UserLoginComponent {
   login() {
     if (this.form.valid) {
       const { email, password } = this.form.value;
-  
       this.usersService.findByEmail(email).subscribe({
         next: (user) => {
-          console.log("User: ", user.email, user.password)
-          console.log("Info: ", email, password)
           if (user && user.password === password) {
+            this.loginError = false;
             this.router.navigate(['user-dashboard/main-page']);
           } else {
-            console.log('Niepoprawne hasło');
+            this.loginError = true;
           }
         },
         error: (err) => {
-          console.log('Użytkownik nie znaleziony');
-        }
+          this.loginError = true;
+        },
       });
     }
   }
-  
 }

@@ -40,6 +40,9 @@
           <button class="signup" type="submit" [disabled]="form.invalid">
             Zaloguj się
           </button>
+          <p *ngIf="loginError" class="error-message">
+            Niepoprawny login lub hasło.
+          </p>
         
         </form>
         
